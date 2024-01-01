@@ -4,7 +4,15 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'hero-image': "url('/src/images/unblurred.jpg')",
+      },
+      colors: {
+        primary: '#050706'
+      }
+
+    },
   },
   plugins: [],
 }
