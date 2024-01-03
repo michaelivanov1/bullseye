@@ -4,7 +4,7 @@ import HomePage from './Components/HomePage';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ fontFamily: 'Livvic, sans-serif' }}>
       <div>
         <Navbar />
         <HomePage />
