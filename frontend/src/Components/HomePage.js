@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../images/logo.png";
+import TickerTapeWidget from "../Widgets/TickerTape/TickerTape";
 
 const HomePage = () => {
   return (
@@ -8,13 +9,13 @@ const HomePage = () => {
         className="relative bg-hero-image bg-cover w-full flex"
         style={{ height: "100vh" }}
       >
+
         <div className="w-full">
+          <TickerTapeWidget />
           <div className="mx-auto">
-            <div className="p-10 bg-black bg-opacity-30">
-              <div className="text-white font-bold text-lg size-20">
-                <img src={logo} alt="Bulleye's Logo" />
-              </div>
-              <ul className="flex space-x-16 justify-center">
+            <div className="p-8 bg-black bg-opacity-20">
+
+              <ul className="flex space-x-24 justify-center items-center">
                 <li>
                   <a href="#" className="text-primary text-2xl">
                     Home
@@ -22,17 +23,20 @@ const HomePage = () => {
                 </li>
                 <li>
                   <a href="#" className="text-primary text-2xl">
+                    Market Activity
+                  </a>
+                </li>
+                <div className="px-14">
+                  <img src={logo} alt="Logo" />
+                </div>
+                <li>
+                  <a href="#" className="text-primary text-2xl">
+                    Market News
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="text-primary text-2xl">
                     About
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-primary text-2xl">
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="text-primary text-2xl">
-                    Contact
                   </a>
                 </li>
               </ul>
@@ -41,7 +45,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="absolute text-primary text-left top-72 w-1/2 border px-40">
+      <div className="absolute text-primary text-left top-72 w-1/2 px-40">
         <h1
           className="text-5xl uppercase"
           style={{
@@ -54,7 +58,7 @@ const HomePage = () => {
         </h1>
         <h1 className="my-10 text-header">
           Some dummy text here Some dummy text here Some dummy text here Some
-          dummy text here Some dummy text here{" "}
+          dummy text here Some dummy text here
         </h1>
         <button className="text-2xl">Learn More</button>
       </div>
