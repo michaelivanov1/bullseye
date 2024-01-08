@@ -1,0 +1,41 @@
+{
+    "symbols": [
+        {
+            "description": "TESLA",
+            "proName": "NASDAQ:TSLA"
+        },
+        {
+            "description": "NASDAQ 100 ETF",
+            "proName": "NASDAQ:QQQ"
+        },
+        {
+            "description": "S&P 500 ETF",
+            "proName": "AMEX:SPY"
+        },
+        {
+            "description": "AMAZON",
+            "proName": "NASDAQ:AMZN"
+        },
+        {
+            "description": "ARK INNOVATION ETF",
+            "proName": "AMEX:ARKK"
+        },
+        {
+            "description": "APPLE",
+            "proName": "NASDAQ:AAPL"
+        },
+        {
+            "description": "SCHWAB US DIVIDEND EQUITY ETF",
+            "proName": "AMEX:SCHD"
+        },
+        {
+            "description": "COINBASE",
+            "proName": "NASDAQ:COIN"
+        }
+    ],
+    "showSymbolLogo": true,
+    "isTransparent": true,
+    "displayMode": "adaptive",
+    "colorTheme": "dark",
+    "locale": "en"
+}
