@@ -6,10 +6,11 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'hero-image': "url('/src/images/hero-image.jpg')"
+        'hero-image': "url('/src/images/homepage//hero-image.jpg')",
+        'test': "url('/src/images/homepage/Untitled.png')"
       },
       colors: {
-        primary: '#10D399',
+        primary: '#26C85E',
         header: 'white',
         subheader: '#ADB1B3',
       }
