@@ -7,7 +7,6 @@ module.exports = {
     extend: {
       backgroundImage: {
         'hero-image': "url('/src/images/homepage//hero-image.jpg')",
-        'test': "url('/src/images/homepage/Untitled.png')"
       },
       colors: {
         primary: '#26C85E',
