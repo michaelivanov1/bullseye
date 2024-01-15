@@ -27,10 +27,10 @@ const HomePage = () => {
               <div className="lg:hidden">
                 <button
                   onClick={toggleMobileMenu}
-                  className="navbar-burger flex items-center text-blue-600 p-3"
+                  className="navbar-burger flex items-center text-blue-600 p-3 "
                 >
                   <svg
-                    className="block h-6 w-6 fill-current"
+                    className="block h-6 w-6 fill-current hover:bg-sky-700"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
                   >
