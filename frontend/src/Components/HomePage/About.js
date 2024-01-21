@@ -3,20 +3,22 @@ import TickerOverview from '../../Widgets/TickerOverview/TickerOverview';
 
 const About = ({ aboutSectionRef }) => {
     return (
-
-
         <div
             ref={aboutSectionRef}
-            className="bg-about-section-image w-full h-full"
-            style={{ height: "100vh" }}>
+            className="bg-about-section-banner w-full h-screen">
 
-            <div className="w-1/3 border border-white h-1/2 pl-48 pt-36 text-left">
-                <h1 className="text-primary text-2xl mb-4">Why Bullseye?</h1>
-                <h1 className="text-header text-3xl mb-4">Lorem Ipsum<br/>Dummy Text</h1>
-                <h1 className="text-subheader">some dummy text here lol some dummy text here lol some dummy text here lol some dummy text here lol some dummy text here lol some dummy text here lol </h1>
+            <div className="flex h-screen">
+                <div className="w-2/5 text-left">
+                    <h1 className="text-primary text-2xl mb-4 pl-24 pt-24">Why Bullseye?</h1>
+                    <h1 className="text-header text-8xl mb-4 pl-24">Simplify<br />Visualization</h1>
+                    <h1 className="text-subheader pl-24">Viewing stock market data has never been this straightforward.
+                        <br /><br />Bullseye features a rich UI with easy access to financials, charts, news, and more market-related data.</h1>
+                </div>
+
+                <div className="w-3/5 text-left flex p-24">
+                    <TickerOverview />
+                </div>
             </div>
-
-            {/* <TickerOverview /> */}
 
         </div>
     );
