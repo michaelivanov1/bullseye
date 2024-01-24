@@ -28,7 +28,7 @@ const TickerTapeWidget = () => {
     }, [scriptRef]);
 
     return (
-        <div id="tradingview-widget-container" className="bg-black bg-opacity-20 animate__animated animate__fadeInLeft">
+        <div id="tradingview-widget-container" className="bg-black bg-opacity-20 animate__animated animate__fadeInLeft" style={{ height: '5vh' }}>
             <div className="tradingview-widget-container__widget"></div>
         </div>
     );
