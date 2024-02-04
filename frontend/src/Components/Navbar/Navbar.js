@@ -10,7 +10,7 @@ const Navbar = () => {
     };
 
     return (
-        <div className="p-8 bg-black bg-opacity-20"  style={{ height: '15vh' }}>
+        <div className="p-6 bg-black bg-opacity-20"  style={{ height: '12vh' }}>
             {/* <div className="flex justify-center">
                 <img src={logo} alt="Logo" />
               </div> */}
