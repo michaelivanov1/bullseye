@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const CompanyProfileWidget = ({ symbol = 'NASDAQ:TSLA' }) => {
+const CompanyProfileWidget = ({ symbol = symbol }) => {
     const container = useRef();
     const script = useRef();
 
