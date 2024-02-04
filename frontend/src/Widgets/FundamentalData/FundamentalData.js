@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const FundamentalDataWidget = () => {
+const FundamentalDataWidget = ({symbol = symbol}) => {
     const container = useRef();
     const script = useRef();
 
@@ -18,7 +18,7 @@ const FundamentalDataWidget = () => {
                     "width": 480,
                     "height": 830,
                     "colorTheme": "dark",
-                    "symbol": "NASDAQ:TSLA",
+                    "symbol": "${symbol}",
                     "locale": "en"
                 }
             `;
