@@ -17,7 +17,7 @@ function App() {
     <div className="App" style={{ fontFamily: 'Poppins, sans-serif' }}>
       <HomePage onLearnMoreClick={handleButtonClick} />
       <About aboutSectionRef={aboutSectionRef} />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
