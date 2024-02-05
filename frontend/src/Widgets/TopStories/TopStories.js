@@ -1,40 +1,54 @@
 import React, { useEffect, useRef } from "react";
-import TopStoriesData from "../TopStories/TopStoriesData.json";
 
 const TopStoriesWidget = () => {
-  const scriptRef = useRef(null);
+  const container = useRef();
+  const script = useRef();
 
   useEffect(() => {
-    // check if the script has already been added to ensure only one ticker tape at a time
-    if (!scriptRef.current) {
-      const script = document.createElement("script");
-      script.type = "text/javascript";
-      script.src =
+    if (!script.current) {
+      script.current = document.createElement("script");
+      script.current.type = "text/javascript";
+      script.current.src =
         "https://s3.tradingview.com/external-embedding/embed-widget-timeline.js";
-      script.async = true;
-      script.innerHTML = `{
-                "feedMode": ${TopStoriesData.feedMode},
-                "isTransparent": ${TopStoriesData.isTransparent},
-                "displayMode": "${TopStoriesData.displayMode}",
-                "colorTheme": "${TopStoriesData.colorTheme}",
-                "locale": "${TopStoriesData.locale}",
-                "width": "${TopStoriesData.width}",
-                "height": "${TopStoriesData.height}",
+      script.current.async = true;
+      script.current.innerHTML = `
+        {
+          "feedMode": "all_symbols",
+          "isTransparent": true,
+          "displayMode": "adaptive",
+          "width": 400,
+          "height": 550,
+          "colorTheme": "dark",
+          "locale": "en"
+        }
+      `;
 
-            }`;
-      document
-        .getElementById("tradingview-widget-container")
-        .appendChild(script);
-
-      // set the ref to the added script to avoid adding it again
-      scriptRef.current = script;
+      container.current.innerHTML = "";
+      container.current.appendChild(script.current);
     }
-  }, [scriptRef]);
+
+    return () => {
+      if (script.current && script.current.parentNode === container.current) {
+        container.current.removeChild(script.current);
+        script.current = null;
+      }
+    };
+  }, []);
 
   return (
-    <div class="tradingview-widget-container">
-      <div class="tradingview-widget-container__widget"></div>
+    <div className="tradingview-widget-container" ref={container}>
+      <div className="tradingview-widget-container__widget"></div>
+      <div className="tradingview-widget-copyright">
+        <a
+          href="https://www.tradingview.com/"
+          rel="noopener nofollow"
+          target="_blank"
+        >
+          <span className="blue-text">Track all markets on TradingView</span>
+        </a>
+      </div>
     </div>
   );
 };
+
 export default TopStoriesWidget;

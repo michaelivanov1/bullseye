@@ -1,9 +1,9 @@
 {
   "feedMode": "all_symbols",
-  "isTransparent": false,
+  "isTransparent": true,
   "displayMode": "regular",
   "width": 480,
   "height": 830,
-  "colorTheme": "light",
+  "colorTheme": "dark",
   "locale": "en"
 }
