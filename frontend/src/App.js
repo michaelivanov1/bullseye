@@ -27,6 +27,7 @@ function App() {
           <Route path="/News" element={<MarketNews />} />
         </Routes>
       </Router>
+      
     </div>
   );
 }
