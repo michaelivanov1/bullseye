@@ -1,13 +1,22 @@
 import React from 'react';
+import { useState } from 'react';
 import TickerOverview from '../../Widgets/TickerOverview/TickerOverview';
-import Dropdown from '../../Helpers/Dropdown';
 import richText1 from '../../images/homepage/about-section/rich-text1.png';
 import richText2 from '../../images/homepage/about-section/rich-text2.png';
 import FundamentalDataWidget from '../../Widgets/FundamentalData/FundamentalData';
 import CompanyProfileWidget from '../../Widgets/CompanyProfile/CompanyProfile';
 import financialsRichText from '../../images/homepage/about-section/financials-rich-text.png';
+import TechnicalAnalysisWidget from '../../Widgets/TechnicalAnalysis/TechnicalAnalysis';
 
 const About = ({ aboutSectionRef }) => {
+
+    const [ticker, setTicker] = useState('NVDA');
+
+    const handleClick = (newTicker) => {
+        setTicker(newTicker);
+        console.log('New Ticker:', newTicker);
+    };
+
     return (
         <div
             ref={aboutSectionRef}
@@ -43,22 +52,31 @@ const About = ({ aboutSectionRef }) => {
                 </div>
             </div>
 
-            <div className="flex bg-about-section-banner h-screen">
+            <div className="bg-about-section-banner h-screen w-4/5 mx-auto">
 
-                <div className="w-2/5 text-left pt-12 pl-24">
-                    <h1 className="text-header text-6xl">Dive Deep</h1>
-                    <h1 className="text-subheader text-3xl pt-4">Into company numbers</h1>
-
-                    <div className="pt-10">
-                        <h1 className="text-subheader pb-2">View company metrics, price history, dividends, income statements and more</h1>
-                        {/* <img src={financialsRichText} /> */}
-                    </div>
+                <div className="">
+                    <h1 className="text-header text-8xl">Dive Deep</h1>
+                    <h1 className="text-subheader text-4xl pt-4">Into company numbers</h1>
+                    {/* <h1 className="text-subheader pb-2">View company metrics, price history, dividends, income statements and more</h1> */}
                 </div>
 
-                <div className="w-3/5 text-left flex pt-10 pl-12">
-                    {/* <Dropdown /> */}
-                    <CompanyProfileWidget symbol={'NVDA'} />
-                    <FundamentalDataWidget symbol={'NVDA'} />
+
+
+                {/* <img src={financialsRichText} /> */}
+
+
+                <div className="p-12 mt-8 border border-white border-opacity-40 rounded-3xl">
+                    <div className="flex items-center pl-4 space-x-4">
+                        <button onClick={() => handleClick('NVDA')} className="p-2 mb-8 border border-white border-opacity-20 rounded-lg text-white w-24 hover:scale-110 transition-transform duration-300 ease-in-out">NVDA</button>
+                        <button onClick={() => handleClick('TSLA')} className="p-2 mb-8 border border-white border-opacity-20 rounded-lg text-white w-24 hover:scale-110 transition-transform duration-300 ease-in-out">TSLA</button>
+                        <button onClick={() => handleClick('MSFT')} className="p-2 mb-8 border border-white border-opacity-20 rounded-lg text-white w-24 hover:scale-110 transition-transform duration-300 ease-in-out">MSFT</button>
+                    </div>
+
+                    <div key={ticker} className="flex items-center justify-between">
+                        <CompanyProfileWidget symbol={ticker} />
+                        <FundamentalDataWidget symbol={ticker} />
+                        <TechnicalAnalysisWidget symbol={ticker} />
+                    </div>
                 </div>
             </div>
         </div>
