@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const FundamentalDataWidget = ({symbol = symbol}) => {
+const TechnicalAnalysisWidget = ({ symbol = symbol }) => {
     const container = useRef();
     const script = useRef();
 
@@ -8,18 +8,19 @@ const FundamentalDataWidget = ({symbol = symbol}) => {
         if (!script.current) {
             script.current = document.createElement('script');
             script.current.type = 'text/javascript';
-            script.current.src = 'https://s3.tradingview.com/external-embedding/embed-widget-financials.js';
+            script.current.src = 'https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js';
             script.current.async = true;
             script.current.innerHTML = `
                 {
-                    "isTransparent": true,
-                    "largeChartUrl": "",
-                    "displayMode": "regular",
+                    "interval": "1m",
                     "width": 400,
+                    "isTransparent": false,
                     "height": 400,
-                    "colorTheme": "dark",
                     "symbol": "${symbol}",
-                    "locale": "en"
+                    "showIntervalTabs": true,
+                    "displayMode": "single",
+                    "locale": "en",
+                    "colorTheme": "dark"
                 }
             `;
 
@@ -33,7 +34,7 @@ const FundamentalDataWidget = ({symbol = symbol}) => {
                 script.current = null;
             }
         };
-    }, []);
+    }, [symbol]);
 
     return (
         <div className="tradingview-widget-container" ref={container}>
@@ -47,4 +48,4 @@ const FundamentalDataWidget = ({symbol = symbol}) => {
     );
 };
 
-export default FundamentalDataWidget;
+export default TechnicalAnalysisWidget;
