@@ -14,25 +14,22 @@ const TopStoriesWidget = () => {
       script.current.innerHTML = `
         {
           "feedMode": "all_symbols",
-          "isTransparent": true,
-          "displayMode": "adaptive",
-          "width": 400,
-          "height": 550,
+          "isTransparent": false,
+          "displayMode": "compact",
+          "width": "100%",
+          "height": "100%",
           "colorTheme": "dark",
           "locale": "en"
         }
       `;
 
+      script.current.onerror = (error) => {
+        console.error("Error loading TradingView script:", error);
+      };
+
       container.current.innerHTML = "";
       container.current.appendChild(script.current);
     }
-
-    return () => {
-      if (script.current && script.current.parentNode === container.current) {
-        container.current.removeChild(script.current);
-        script.current = null;
-      }
-    };
   }, []);
 
   return (
