@@ -6,7 +6,10 @@ import StockMarketWidget from "../../Widgets/StockMarket/StockMarket";
 import MarketStatus from "../../Helpers/MarketStatus";
 import "animate.css";
 
-const HomePage = ({ onLearnMoreClick }) => {
+const HomePage = ({ handleButtonClick }) => {
+
+  const aboutSectionRef = useRef();
+
   return (
     <div>
       <div className="relative bg-hero-image bg-cover w-full h-screen">
@@ -22,7 +25,7 @@ const HomePage = ({ onLearnMoreClick }) => {
             </h1>
 
             <button
-              onClick={onLearnMoreClick}
+              onClick={handleButtonClick}
               className="w-[200px] bg-transparent border-2 border-green-500 text-primary rounded-full p-3 text-2xl hover:bg-green-500 hover:text-white transition-all duration-300"
             >
               Learn More
@@ -37,8 +40,7 @@ const HomePage = ({ onLearnMoreClick }) => {
           </div>
         </div>
       </div>
-      <About />
-      <Footer />
+      <About aboutSectionRef={aboutSectionRef} />
     </div>
   );
 };

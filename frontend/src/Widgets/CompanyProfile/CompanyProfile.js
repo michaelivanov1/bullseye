@@ -12,8 +12,8 @@ const CompanyProfileWidget = ({ symbol = symbol }) => {
             script.current.async = true;
             script.current.innerHTML = `
                 {
-                    "width": 480,
-                    "height": 650,
+                    "width": 400,
+                    "height": 400,
                     "isTransparent": true,
                     "colorTheme": "dark",
                     "symbol": "${symbol}",

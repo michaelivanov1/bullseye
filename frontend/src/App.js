@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import HomePage from "./Components/HomePage/HomePage";
+import Footer from "./Components/Footer/Footer";
 import Navbar from "./Components/Navbar/Navbar";
 import TickerTapeWidget from "./Widgets/TickerTape/TickerTape";
 
@@ -23,10 +24,15 @@ function App() {
         <TickerTapeWidget />
         <Navbar />
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/"
+            element={<HomePage handleButtonClick={handleButtonClick} />}
+          />
           <Route path="/News" element={<MarketNews />} />
         </Routes>
+        <Footer />
       </Router>
+
     </div>
   );
 }
