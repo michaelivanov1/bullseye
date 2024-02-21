@@ -5,11 +5,11 @@ import HeatMapWidget from "../../Widgets/HeatMap/HeatMap";
 
 const MarketNews = () => {
   return (
-    <div>
-      <div className="relative bg-hero-image bg-cover w-full h-screen">
-        <div className="w-full block" style={{ height: "80vh" }}>
-          <div className="w-2/5 sm:pl-28 pt-24 animate__animated animate__fadeInDown text-left">
-            <h1 className="text-md lg:text-7xl text-header ">
+    <div className="">
+      <div className="relative bg-hero-image bg-cover w-full h-screen ">
+        <div className="w-full block  " style={{ height: "80vh" }}>
+          <div className="md:pl-28 pt-24 animate__animated animate__fadeInDown md:text-left">
+            <h1 className="text-4xl md:text-5xl text-header ">
               Stay up to date with the market
             </h1>
 
@@ -24,18 +24,18 @@ const MarketNews = () => {
 
           <div className="bg-hero-image pt-24 block h-screen justify-center">
             <div className="">
-              <h1 className="text-header text-6xl">Latest Stories</h1>
+              <h1 className="text-header text-5xl">Latest Stories</h1>
               <h1 className="text-subheader text-3xl pt-4">
                 Study the movement of the market.
               </h1>
             </div>
-            <div className=" text-left flex pt-10 p-12 h-3/5">
+            <div className="bg-hero-image text-left flex pt-10 p-12 h-3/5">
               <TopStoriesWidget />
             </div>
           </div>
           <div className="bg-hero-image  block h-screen justify-center">
             <div className="">
-              <h1 className="text-header text-6xl">Heatmap</h1>
+              <h1 className="text-header text-5xl">Heatmap</h1>
               <h1 className="text-subheader text-3xl pt-4">
                 Group stocks that match together.
               </h1>
