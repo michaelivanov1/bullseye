@@ -7,7 +7,6 @@ import MarketStatus from "../../Helpers/MarketStatus";
 import "animate.css";
 
 const HomePage = ({ handleButtonClick }) => {
-
   const aboutSectionRef = useRef();
 
   return (
@@ -15,7 +14,7 @@ const HomePage = ({ handleButtonClick }) => {
       <div className="relative bg-hero-image bg-cover w-full h-screen">
         <div className="w-full flex" style={{ height: "80vh" }}>
           <div className="w-2/5 sm:pl-28 pt-24 animate__animated animate__fadeInDown text-left">
-            <h1 className="text-md lg:text-7xl text-header ">
+            <h1 className="text-4xl lg:text-7xl text-header ">
               Patience is the Currency of Success
             </h1>
 
@@ -25,7 +24,7 @@ const HomePage = ({ handleButtonClick }) => {
             </h1>
 
             <button
-              onClick={handleButtonClick}
+              // onClick={handleButtonClick} need to redo
               className="w-[200px] bg-transparent border-2 border-green-500 text-primary rounded-full p-3 text-2xl hover:bg-green-500 hover:text-white transition-all duration-300"
             >
               Learn More
