@@ -1,7 +1,6 @@
 // HomePage.js
 import React, { useRef } from "react";
 import About from "./About";
-import Footer from "../Footer/Footer";
 import StockMarketWidget from "../../Widgets/StockMarket/StockMarket";
 import MarketStatus from "../../Helpers/MarketStatus";
 import "animate.css";
@@ -12,8 +11,8 @@ const HomePage = ({ handleButtonClick }) => {
   return (
     <div>
       <div className="relative bg-hero-image bg-cover w-full h-screen">
-        <div className="w-full flex" style={{ height: "80vh" }}>
-          <div className="w-2/5 sm:pl-28 pt-24 animate__animated animate__fadeInDown text-left">
+        <div className="w-full md:flex" style={{ height: "80vh" }}>
+          <div className="md:w-2/5 md:pl-28 pt-24 animate__animated animate__fadeInDown text-center md:text-left ">
             <h1 className="text-4xl lg:text-7xl text-header ">
               Patience is the Currency of Success
             </h1>
@@ -25,21 +24,24 @@ const HomePage = ({ handleButtonClick }) => {
 
             <button
               // onClick={handleButtonClick} need to redo
-              className="w-[200px] bg-transparent border-2 border-green-500 text-primary rounded-full p-3 text-2xl hover:bg-green-500 hover:text-white transition-all duration-300"
+              className="w-[150px] sm:w-[200px] bg-transparent border-2 border-green-500 text-primary rounded-full p-3 text-md sm:text-2xl hover:bg-green-500 hover:text-white transition-all duration-300 md:"
             >
               Learn More
             </button>
           </div>
 
-          <div className="w-3/5 pt-24 flex justify-center">
-            <h1 className="text-md lg:text-xl text-header ">
+          <div className="md:w-3/5 pt-12 md:pt-24 h-full flex justify-center">
+            <h1 className="text-md lg:text-xl text-header">
               <StockMarketWidget />
               <MarketStatus />
             </h1>
           </div>
         </div>
       </div>
-      <About aboutSectionRef={aboutSectionRef} />
+      <About
+        className="bg-about-section-banner"
+        aboutSectionRef={aboutSectionRef}
+      />
     </div>
   );
 };
