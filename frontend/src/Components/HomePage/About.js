@@ -68,7 +68,7 @@ const About = ({ aboutSectionRef }) => {
         </div>
       </div>
 
-      <div className="h-1/6 lg:h-screen lg:w-4/5 md:mx-auto -z-30  lg:block">
+      <div className="h-1/6 lg:h-screen lg:w-4/5 md:mx-auto -z-30 px-4 lg:px-0 lg:block">
         <div className="">
           <h1 className="text-header text-4xl lg:text-7xl pt-12 md:pt-1">
             Dive Deep
@@ -82,7 +82,7 @@ const About = ({ aboutSectionRef }) => {
         {/* <img src={financialsRichText} /> */}
 
         <div className="p-12 mt-8 pb-16 border border-white border-opacity-40 rounded-3xl">
-          <div className="flex items-center pl-4 space-x-4">
+          <div className="flex items-center pl-4 space-x-4 justify-center lg:justify-normal">
             <button
               onClick={() => handleClick("NVDA")}
               className="p-2 mb-8 border border-white border-opacity-20 rounded-lg text-white w-24 hover:scale-110 transition-transform duration-300 ease-in-out"
@@ -105,11 +105,17 @@ const About = ({ aboutSectionRef }) => {
 
           <div
             key={ticker}
-            className="block lg:flex items-center justify-between"
+            className="block lg:flex place-items-center px-32 md:px-56 lg:px-0 self-center lg:justify-between mb-4"
           >
-            <CompanyProfileWidget symbol={ticker} />
-            <FundamentalDataWidget symbol={ticker} />
-            <TechnicalAnalysisWidget symbol={ticker} />
+            <div className="">
+              <CompanyProfileWidget symbol={ticker} />
+            </div>
+            <div>
+              <FundamentalDataWidget symbol={ticker} />
+            </div>
+            <div>
+              <TechnicalAnalysisWidget symbol={ticker} />
+            </div>
           </div>
         </div>
       </div>
